@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      DOOM for Emscripten Project - Landing Page
+    </title>
+  </head>
+  <body>
+    <h1>DOOM for Emscripten</h1>
+    <br><br>
+    <h3>Landing Page</h3>
+    <br>
+    <label for="selector">Where would you like to go?</label><br />
+    <select id="selector" name="selector">
+      <option>DOOM (linuxxdoom engine)</option>
+      <option>GitHub page</option>
+    </select>
+    <br />
+    <button id="confirm">Warp to selected page</button>
+    <button id="randomconfirm">Warp to random page</button>
+    <script>
+      // hehe
+      window.siteUrls = ["https://doom-em.github.io/sdl_doom_em/sdl_doom.html", "https://github.com/doom-em"];
+      window.onload = function () {
+        window.pageSelector = document.getElementById("selector");
+        window.pageConfirm = document.getElementById("confirm");
+        window.randomConfirm = document.getElementById("randomconfirm");
+        pageConfirm.addEventListener(
+          "click",
+          () => {
+            window.location.href = window.siteUrls[window.pageSelector.selectedIndex];
+          }
+        );
+        pageConfirm.addEventListener(
+          "click",
+          () => {
+            window.location.href = window.siteUrls[Math.round(Math.random() * window.siteUrls.length)];
+          }
+        );
+      };
+    </script>
+  </body>
+</html>
