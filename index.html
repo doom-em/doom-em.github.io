@@ -4,20 +4,25 @@
     <title>
       DOOM for Emscripten Project - Landing Page
     </title>
-  </head>
-  <body>
-    <h1>DOOM for Emscripten</h1>
-    <br><br>
-    <h3>Landing Page</h3>
-    <br>
-    <label for="selector">Where would you like to go?</label><br />
-    <select id="selector" name="selector">
-      <option>DOOM (linuxxdoom engine)</option>
-      <option>GitHub page</option>
-    </select>
-    <br />
-    <button id="confirm">Warp to selected page</button>
-    <button id="randomconfirm">Warp to random page</button>
+    <style>
+      /* someone really needs to change the default html font */
+      html {
+        font-family: sans-serif;
+      }
+      select, option {
+        background-color: #eb4034;
+        border: solid #00000099 4px;
+        color: white;
+        font-family: sans-serif;
+        padding: 5px 17px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
     <script>
       // hehe
       window.siteUrls = ["https://doom-em.github.io/sdl_doom_em/sdl_doom.html", "https://github.com/doom-em"];
@@ -31,7 +36,7 @@
             window.location.href = window.siteUrls[window.pageSelector.selectedIndex];
           }
         );
-        pageConfirm.addEventListener(
+        randomConfirm.addEventListener(
           "click",
           () => {
             window.location.href = window.siteUrls[Math.round(Math.random() * window.siteUrls.length)];
@@ -39,5 +44,21 @@
         );
       };
     </script>
+  </head>
+  <body>
+    <h1>DOOM for Emscripten</h1>
+    <br/>
+    <h3>Landing Page</h3>
+    <br/><br/>
+    <label for="selector">Where would you like to go?</label><br/>
+    <select id="selector" name="selector">
+      <option>DOOM (linuxxdoom engine)</option>
+      <option>GitHub page</option>
+    </select>
+    <br/><br/>
+    <button id="confirm">Warp to selected page</button>
+    <br/>
+    <button id="randomconfirm">Warp to random page</button>
+    
   </body>
 </html>
