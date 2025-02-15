@@ -39,7 +39,7 @@
         randomConfirm.addEventListener(
           "click",
           () => {
-            window.location.href = window.siteUrls[Math.round(Math.random() * window.siteUrls.length)];
+            window.location.href = window.siteUrls[Math.floor(Math.random() * window.siteUrls.length)];
           }
         );
       };
