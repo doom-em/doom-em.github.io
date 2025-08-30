@@ -4,16 +4,32 @@
     <title>
       DOOM for Emscripten Project - Landing Page
     </title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:title" content="DOOM in Emscripten" />
+    <meta property="og:description" content="The landing page for the DOOM for Emscripten project." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://doom-em.github.io/sdl_doom_em/doomlogo.png" />
+    <meta property="og:url" content="https://doom-em.github.io" />
+    <title>DOOM in the Browser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/sdl_doom_em/doomicon.png"/>
+    <link rel="shortcut icon" href="/sdl_doom_em/doomicon.png"/>
     <style>
       /* someone really needs to change the default html font */
       html {
-        font-family: sans-serif;
+        font-family: VT323;
+        color: white;
+        background: black;
+        text-align: center;
       }
       select, option {
         background-color: #eb4034;
         border: solid #00000099 4px;
         color: white;
-        font-family: sans-serif;
+        font-family: inherit;
         padding: 5px 17px;
         text-align: center;
         text-decoration: none;
@@ -25,7 +41,7 @@
     </style>
     <script>
       // hehe
-      window.siteUrls = ["https://doom-em.github.io/sdl_doom_em/sdl_doom.html", "https://github.com/doom-em"];
+      window.siteUrls = ["https://doom-em.github.io/chocolate-doom-em", "https://doom-em.github.io/sdl_doom_em", "https://github.com/doom-em"];
       window.onload = function () {
         window.pageSelector = document.getElementById("selector");
         window.pageConfirm = document.getElementById("confirm");
@@ -52,7 +68,8 @@
     <br/><br/>
     <label for="selector">Where would you like to go?</label><br/>
     <select id="selector" name="selector">
-      <option>DOOM (linuxxdoom engine)</option>
+      <option>DOOM (Chocolate Doom engine)</option>
+      <option>DOOM (legacy linuxxdoom engine)</option>
       <option>GitHub page</option>
     </select>
     <br/><br/>
